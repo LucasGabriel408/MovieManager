@@ -6,7 +6,7 @@ Route::get('/', function () {
     return view('index');
 })->name('home');
 
-Route::get('/movies', [App\Http\Controllers\MoviesController::class, 'list'])->name('movies');
+Route::get('/movies', [App\Http\Controllers\MoviesController::class, 'index'])->name('movies');
 
 Route::get('/manage', [App\Http\Controllers\ManageController::class, 'index'])->name('manage');
 
