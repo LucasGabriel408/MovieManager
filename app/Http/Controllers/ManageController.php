@@ -8,6 +8,10 @@ class ManageController extends Controller
 {
     public function index()
     {
-        return view('manage.index');
+        $moviesController = new MoviesController();
+        $movies = $moviesController->list();
+
+        return view('manage.index', compact('movies'));
+
     }
 }
