@@ -5,7 +5,7 @@
     <div class="container">
         <h1 class="movie-name"></h1>
         <span class="movie-synopse" hidden></span>
-        <a href="{{ route('movie.show', $movies->id()) }}">See Details</a>
+        <a href="">See Details</a>
     </div>
 </section>
 
