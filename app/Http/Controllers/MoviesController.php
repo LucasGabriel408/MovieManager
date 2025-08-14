@@ -6,6 +6,17 @@ use App\Models\Movie;
 use Illuminate\Http\Request;
 
 class MoviesController extends Controller {
+
+    public function home()
+    {
+        $movies = Movie::all();
+        $num = rand(0, count($movies) - 1);
+        
+        $cover = $movies[$num];
+
+        return view('index', compact('movies'), compact('cover'));
+    }
+
     public function index() {
         $movies = Movie::all();
 

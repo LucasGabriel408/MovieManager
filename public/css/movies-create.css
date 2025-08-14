@@ -1,0 +1,139 @@
+.movie-edit-container {
+    width: 90%;
+    max-width: 800px;
+    margin: 4rem auto 2rem auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    color: #f1f1f1;
+    padding-top: 10vh;
+}
+
+.movie-edit-title {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    color: #EB1D19;
+}
+
+.movie-error {
+    width: 100%;
+}
+
+.movie-alert-error {
+    background-color: #330000;
+    color: #ff4d4d;
+    padding: 1rem;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.movie-alert-error ul {
+    list-style: disc;
+    padding-left: 1.5rem;
+}
+
+.movie-edit-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    background-color: #1e1e1e;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+}
+
+.movie-edit-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.movie-edit-label {
+    font-weight: bold;
+    color: #f1f1f1;
+}
+
+.movie-edit-input,
+.movie-edit-textarea {
+    padding: 0.6rem 1rem;
+    border-radius: 5px;
+    border: 1px solid #333;
+    background-color: #111;
+    color: #f1f1f1;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.movie-edit-input:focus,
+.movie-edit-textarea:focus {
+    border-color: #EB1D19;
+    box-shadow: 0 0 5px rgba(235, 29, 25, 0.7);
+}
+
+.movie-edit-textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.movie-btn-update,
+.movie-btn-back {
+    padding: 0.6rem 1.2rem;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    display: inline-block;
+}
+
+.movie-btn-update {
+    background-color: #EB1D19;
+    color: #fff;
+}
+
+.movie-btn-update:hover {
+    background-color: #ff3b3b;
+}
+
+.movie-btn-back {
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.movie-btn-back:hover {
+    background-color: #555;
+}
+
+@media (max-width: 768px) {
+    .movie-edit-container {
+        width: 95%;
+        margin-top: 2rem;
+    }
+
+    .movie-edit-title {
+        font-size: 1.6rem;
+    }
+
+    .movie-edit-input,
+    .movie-edit-textarea {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .movie-edit-title {
+        font-size: 1.4rem;
+    }
+
+    .movie-btn-update,
+    .movie-btn-back {
+        font-size: 0.9rem;
+        padding: 0.5rem 1rem;
+    }
+}

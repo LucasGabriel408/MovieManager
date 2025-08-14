@@ -1,42 +1,53 @@
 @include('templates.base')
 @include('templates.navbar')
 
-<div class="container mt-4">
-    <h1>Edit Movie</h1>
-    <form action="{{ route('movies.update', $movie->id) }}" method="POST">
+<link rel="stylesheet" href="{{ asset('css/edit-movie.css') }}">
+
+<div class="movie-edit-container">
+    <h1 class="movie-edit-title">Edit Movie</h1>
+
+    <form action="{{ route('movies.update', $movie->id) }}" method="POST" class="movie-edit-form">
         @csrf
-        @method('PUT')
+        @method('POST')
 
-        <div class="mb-3">
-            <label for="name" class="form-label">Name</label>
-            <input type="text" class="form-control" id="name" name="name" value="{{ $movie->name }}" required>
+        <div class="movie-edit-field">
+            <label for="name" class="movie-edit-label">Name</label>
+            <input type="text" class="movie-edit-input" id="name" name="name" value="{{ $movie->name }}" required>
         </div>
 
-        <div class="mb-3">
-            <label for="synopsis" class="form-label">Synopsis</label>
-            <textarea class="form-control" id="synopsis" name="synopsis" required>{{ $movie->synopsis }}</textarea>
+        <div class="movie-edit-field">
+            <label for="synopsis" class="movie-edit-label">Synopsis</label>
+            <textarea class="movie-edit-textarea" id="synopsis" name="synopsis"
+                required>{{ $movie->synopsis }}</textarea>
         </div>
 
-        <div class="mb-3">
-            <label for="year" class="form-label">Year</label>
-            <input type="number" class="form-control" id="year" name="year" value="{{ $movie->year }}" required>
+        <div class="movie-edit-field">
+            <label for="year" class="movie-edit-label">Year</label>
+            <input type="number" class="movie-edit-input" id="year" name="year" value="{{ $movie->year }}" required>
         </div>
-        <div class="mb-3">
-            <label for="category" class="form-label">Category</label>
-            <input type="text" class="form-control" id="category" name="category" value="{{ $movie->category }}"
+
+        <div class="movie-edit-field">
+            <label for="category" class="movie-edit-label">Category</label>
+            <input type="text" class="movie-edit-input" id="category" name="category" value="{{ $movie->category }}"
                 required>
         </div>
-        <div class="mb-3">
-            <label for="cover_image" class="form-label">Cover Image URL</label>
-            <input type="text" class="form-control" id="cover_image" name="cover_image"
+
+        <div class="movie-edit-field">
+            <label for="cover_image" class="movie-edit-label">Cover Image URL</label>
+            <input type="text" class="movie-edit-input" id="cover_image" name="cover_image"
                 value="{{ $movie->cover_image }}" required>
         </div>
-        <div class="mb-3">
-            <label for="trailer_link" class="form-label">Trailer Link</label>
-            <input type="text" class="form-control" id="trailer_link" name="trailer_link"
+
+        <div class="movie-edit-field">
+            <label for="trailer_link" class="movie-edit-label">Trailer Link</label>
+            <input type="text" class="movie-edit-input" id="trailer_link" name="trailer_link"
                 value="{{ $movie->trailer_link }}" required>
         </div>
-        <button type="submit" class="btn btn-primary">Update Movie</button>
+
+        <button type="submit" class="movie-btn-update">Update Movie</button>
     </form>
-    <a href="{{ route('movies') }}" class="btn btn-secondary mt-3">Back to Movie List</a>
+
+    <a href="{{ route('movies') }}" class="movie-btn-back">Back to Movie List</a>
 </div>
+
+@include('templates.footer')
